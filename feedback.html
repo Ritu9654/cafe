@@ -1,0 +1,135 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="stylesf.css">
+        <title>
+            FEEDBACK
+        </title>
+
+        <script>
+            function printfunc()
+            {
+                var fn=document.getElementById("fname").value;
+                var mn=document.getElementById("mname").value;
+                var ln=document.getElementById("lname").value;
+                var st=document.getElementById("tarea").value;
+
+if(fn=="")
+alert("PLEASE ENTER YOUR FIRST NAME!!!");
+if(ln=="")
+alert("PLEASE ENTER YOUR LAST NAME!!!");
+if(st=="")
+alert("PLEASE ENTER YOUR SUGGESTION!!!");
+if(document.getElementById('genderf').checked==false && document.getElementById('genderm').checked==false)
+alert("PLEASE SELECT YOUR GENDER!!!");
+
+                if(document.getElementById('genderm').checked && fn!="" && mn=="" && ln!="" && st!=="")
+                    {
+                    document.getElementById("tid2").value+="MR. "+fn.trim()+" "+ln.trim()+" SAYS \n"+st+"\n\n\n";
+                    }
+                else if(document.getElementById('genderf').checked &&  fn!="" && mn=="" && ln!="" && st!=="")
+                    {
+                    document.getElementById("tid2").value+="MS."+fn.trim()+" "+ln.trim()+" SAYS \n"+st+"\n\n\n";
+                     }
+                else if(document.getElementById('genderm').checked &&  fn!="" && mn!="" && ln!="" && st!=="")
+                    {
+                        document.getElementById("tid2").value+= "MR. "+fn.trim()+" "+mn.trim()+" "+ln.trim()+" SAYS \n"+st+"\n\n\n";
+                    }
+                else if(document.getElementById('genderf').checked &&  fn!="" && mn!="" && ln!="" && st!=="")
+                    {
+                        document.getElementById("tid2").value+= "MS. "+fn.trim()+" "+mn.trim()+" "+ln.trim()+" SAYS \n"+st+"\n\n\n";
+                    }
+            
+            }
+
+            function resetFunction() {
+  document.getElementById("myForm").reset();
+}
+            </script>
+    </head>
+    <body>
+<header>
+    <h1>
+        FEEDBACK FORM
+    </h1>
+</header>
+        <div class="topnav">
+            <a href="feedback.html"><b>Feedback</b></a>
+            <a href="contact.html"><b>Contact</b></a>
+            <a href="about.html"><b>About</b></a>
+            <a href="menu.html"><b>Café Menu</b></a>
+            <a href="index.html"><b>Home</b></a>
+          </div>
+        </br></br></br></br>
+
+
+<div id="head1">
+<p id="p1"> FEEDBACK</p>  <p id="p2"> YOUR THOUGHTS MATTER</p>
+</div>
+
+<div id="div1">
+<div class="column left">
+    <form id="myForm">
+        <table>
+        </br></br>
+            <tr>
+                <td>
+                    FIRST NAME* &nbsp;
+                </td>
+                <td>
+                    <input type="text" name="fname" id="fname" maxlength="40" required>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    MIDDLE NAME &nbsp;
+                </td>
+                <td>
+                    <input type="text" name="mname" id="mname" maxlength="40">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    LAST NAME* &nbsp;
+                </td>
+                <td>
+                    <input type="text" name="lname"id="lname" maxlength="40" required>
+                </td>
+            </tr>
+       
+            <tr>
+                <td colspan="2"> YOUR SUGGESTION* </td>
+               
+            </tr>
+            <tr>
+                <td colspan="2">  <textarea id="tarea" rows="6" required></textarea>  </td>
+            </tr>
+
+            <tr>
+                <td>
+                    GENDER* &nbsp;&nbsp;&nbsp;&nbsp;</br>
+                    MALE &nbsp; <input type="radio" name="gender" id="genderm">
+                </td>
+                <td>
+                </br>
+                    FEMALE &nbsp;  <input type="radio" name="gender" id="genderf">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2"> <input type="button" name="plus" value="+" onclick="printfunc()">  <input type="reset" name="minus" value="-" onclick="resetFunction()"> </td> 
+            </tr>
+
+        </table>
+        
+    </form>
+</div>
+  <div class="column right">
+    <textarea id="tid2" readonly></textarea>
+   
+  </div>
+</div>
+</br></br>
+        <footer>
+            Designed by : Ritu Prasad and Ridhi kalra  &copy; All Rights Reserved.
+        </footer>
+    </body>
+</html>
